@@ -1,0 +1,1 @@
+wt -d ./src/Client/TeamsNPlayers.Client --title "Client" PowerShell -c pnpm run dev `; split-pane -d ./src/WebApi/TeamsNPlayers.WebApi --title "WebApi" dotnet watch run --launch-profile "TeamsNPlayers.WebApi"

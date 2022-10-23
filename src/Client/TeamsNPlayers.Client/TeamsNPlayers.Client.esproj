@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.7-alpha">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>d0bd0dcd-0a63-4925-bdf3-e8860b5b5ac2</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Script Include="**" Exclude="*.esproj;**\node_modules\**;dist\**;cypress\screenshots\**" />
+  </ItemGroup>
+</Project>

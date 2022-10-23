@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsNPlayers.WebApi", "src\WebApi\TeamsNPlayers.WebApi\TeamsNPlayers.WebApi.csproj", "{31BCE709-4C10-4A19-83F6-BA109FB1A2FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{7C40E969-E524-4F93-A3C3-038E443EB845}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{F724FD5C-C985-4FB9-807E-33FF9E7B89FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsNPlayers.Client", "src\Client\TeamsNPlayers.Client\TeamsNPlayers.Client.esproj", "{D0BD0DCD-0A63-4925-BDF3-E8860B5B5AC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsNPlayers.Application", "src\WebApi\TeamsNPlayers.Application\TeamsNPlayers.Application.csproj", "{57B73D38-8493-47E2-8FD1-EDB487C3E4F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsNPlayers.Infrastructure.EFCore", "src\WebApi\TeamsNPlayers.Infrastructure.EFCore\TeamsNPlayers.Infrastructure.EFCore.csproj", "{9A709F30-045D-4E8A-ADE3-55EF4B6E2276}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31BCE709-4C10-4A19-83F6-BA109FB1A2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BCE709-4C10-4A19-83F6-BA109FB1A2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BCE709-4C10-4A19-83F6-BA109FB1A2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BCE709-4C10-4A19-83F6-BA109FB1A2FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0BD0DCD-0A63-4925-BDF3-E8860B5B5AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0BD0DCD-0A63-4925-BDF3-E8860B5B5AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0BD0DCD-0A63-4925-BDF3-E8860B5B5AC2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0BD0DCD-0A63-4925-BDF3-E8860B5B5AC2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{57B73D38-8493-47E2-8FD1-EDB487C3E4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B73D38-8493-47E2-8FD1-EDB487C3E4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B73D38-8493-47E2-8FD1-EDB487C3E4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B73D38-8493-47E2-8FD1-EDB487C3E4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A709F30-045D-4E8A-ADE3-55EF4B6E2276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A709F30-045D-4E8A-ADE3-55EF4B6E2276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A709F30-045D-4E8A-ADE3-55EF4B6E2276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A709F30-045D-4E8A-ADE3-55EF4B6E2276}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31BCE709-4C10-4A19-83F6-BA109FB1A2FB} = {7C40E969-E524-4F93-A3C3-038E443EB845}
+		{D0BD0DCD-0A63-4925-BDF3-E8860B5B5AC2} = {F724FD5C-C985-4FB9-807E-33FF9E7B89FF}
+		{57B73D38-8493-47E2-8FD1-EDB487C3E4F5} = {7C40E969-E524-4F93-A3C3-038E443EB845}
+		{9A709F30-045D-4E8A-ADE3-55EF4B6E2276} = {7C40E969-E524-4F93-A3C3-038E443EB845}
+	EndGlobalSection
+EndGlobal
