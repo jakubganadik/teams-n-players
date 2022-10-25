@@ -1,57 +1,60 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using System.Numerics;
+using TeamsNPlayers.Application.Individuals;
+using TeamsNPlayers.Application.Players;
+using TeamsNPlayers.Application.Teams;
 
 namespace TeamsNPlayers.WebApi.Controllers;
+
+public record CreatePlayerDto([Required] Guid TeamId, [Required] Guid IndividualId, [Required] ushort ShirtNumber, [Required] string Position);
+public record UpdatePlayerDto([Required] Guid id, [Required] string TeamName, [Required] ushort ShirtNumber, [Required] string Position);
 
 [ApiController]
 [Route("api/v1/players")]
 public class PlayersController : ControllerBase
 {
-    [HttpGet("")]
-    public IActionResult GetPlayers()
-    {
-        return Ok(new [] 
-        {
-            new
-            {
-                Id = new Guid("35c4b7bc-ef5f-43cb-b902-b8d3d9d87d90"),
-                TeamId = new Guid("79d1705c-4864-4a29-a864-2ec582bb6342"),
-                IndividualId = new Guid("66a4657a-cdcc-4df5-baa1-1a9c81ba5044"),
-                TeamName = "FC Foo",
-                PlayerName = "DOE John",
-                ShirtNumber = 77,
-                Position = "GLK"
-            }
-        });
-    }
 
+    private readonly ISender _sender;
+
+    public PlayersController(ISender sender) => _sender = sender; //simpler implem
+    
+    [HttpGet("")]
+    public async Task<IActionResult> GetPlayers()
+    => Ok(await _sender.Send(new GetAllPlayersQuery()));
+    
     [HttpGet("{id:guid}")]
-    public IActionResult GetPlayer(Guid id)
-    {
-        return Ok(new
-        {
-            Id = id,
-            TeamId = new Guid("79d1705c-4864-4a29-a864-2ec582bb6342"),
-            IndividualId = new Guid("66a4657a-cdcc-4df5-baa1-1a9c81ba5044"),
-            TeamName = "FC Foo",
-            PlayerName = "DOE John",
-            ShirtNumber = 77,
-            Position = "GLK"
-        });
-    }
+    public async Task<IActionResult> GetPlayer(Guid id)
+        => Ok(await _sender.Send(new GetTeamByIdQuery(id)));
 
     [HttpPost("")]
-    public IActionResult CreatePlayer() 
-        => CreatedAtAction(nameof(GetPlayer), new { id = Guid.NewGuid() }, null);
+    public async Task<IActionResult> CreatePlayer(CreatePlayerDto player) {
+
+        var id = Guid.NewGuid();
+
+        await _sender.Send(new CreatePlayerCommand(id, player.TeamId, player.ShirtNumber, player.IndividualId, player.Position));
+        return CreatedAtAction(nameof(GetPlayer), new { id }, null);
+    }
     
     [HttpPut("{id:guid}")]
-    public IActionResult UpdatePlayer() 
-        => NoContent();
+    public async Task<IActionResult> UpdatePlayer(UpdatePlayerDto player)
+    {
+        await _sender.Send(new UpdatePlayerCommand(player.id, player.TeamName, player.ShirtNumber, player.Position));
+        return NoContent();
+    }
 
     [HttpDelete("{id:guid}")]
-    public IActionResult DeleteSinglePlayerById() 
-        => NoContent();
-
+    public async Task<IActionResult> DeleteSinglePlayerById(Guid id)
+    {
+        await _sender.Send(new DeleteSinglePlayerByIdCommand(id));
+        return NoContent();
+    }
     [HttpPost("delete")]
-    public Task<IActionResult> DeleteMultiplePlayersByIds(Guid[] ids) 
-        => Task.FromResult<IActionResult>(NoContent());
+    public async Task<IActionResult> DeleteMultiplePlayersByIds(Guid[] ids)
+    {
+        await _sender.Send(new DeleteMultiplePlayersByIdCommand(ids));
+        return NoContent();
+    }
+        
 }

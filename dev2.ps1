@@ -1,0 +1,1 @@
+wt -d ./src/WebApi/TeamsNPlayers.WebApi --title "WebApi" dotnet watch run --launch-profile "TeamsNPlayers.WebApi"

@@ -14,7 +14,7 @@ internal class GetAllTeamsHandler : IRequestHandler<GetAllTeamsQuery, List<AllTe
 
     public GetAllTeamsHandler(DbContext context) => _context = context;
 
-    public async Task<List<AllTeamsResultItem>> Handle(GetAllTeamsQuery request, CancellationToken cancellationToken)
+    public async Task<List<AllTeamsResultItem>> Handle(GetAllTeamsQuery request, CancellationToken cancellationToken) //query
     {
         return await _context
             .Query<Team>()

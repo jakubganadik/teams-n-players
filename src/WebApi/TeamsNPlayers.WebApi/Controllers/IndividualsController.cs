@@ -5,7 +5,7 @@ using TeamsNPlayers.Application.Individuals;
 
 namespace TeamsNPlayers.WebApi.Controllers;
 
-public record CreateIndividualDto([Required] string FirstName, [Required] string LastName);
+public record CreateIndividualDto([Required] string FirstName, [Required] string LastName);//create update?
 
 public record UpdateIndividualDto([Required] string FirstName, [Required] string LastName);
 
@@ -32,7 +32,7 @@ public class IndividualsController : ControllerBase
 
         await _sender.Send(new CreateIndividualCommand(id, individual.FirstName, individual.LastName));
         
-        return CreatedAtAction(nameof(GetIndividual), new { id }, null);
+        return CreatedAtAction(nameof(GetIndividual), new { id }, null); //test
     }
     
     [HttpPut("{id:guid}")]

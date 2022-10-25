@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\WebApi",
+    "\\src\\WebApi\\TeamsNPlayers.Application",
+    "\\src\\WebApi\\TeamsNPlayers.Application\\Players",
+    "\\src\\WebApi\\TeamsNPlayers.Application\\Teams",
+    "\\src\\WebApi\\TeamsNPlayers.Infrastructure.EFCore",
+    "\\src\\WebApi\\TeamsNPlayers.Infrastructure.EFCore\\TypeConfigurations",
+    "\\src\\WebApi\\TeamsNPlayers.WebApi",
+    "\\src\\WebApi\\TeamsNPlayers.WebApi\\Controllers"
+  ],
+  "SelectedNode": "\\src\\WebApi\\TeamsNPlayers.Application\\Players\\GetAllPlayers.cs",
+  "PreviewInSolutionExplorer": false
+}

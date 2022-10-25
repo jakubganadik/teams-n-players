@@ -15,7 +15,7 @@ public class TeamsController : ControllerBase
 {
     private readonly ISender _sender;
     
-    public TeamsController(ISender sender) => _sender = sender;
+    public TeamsController(ISender sender) => _sender = sender; //simpler implem
 
     [HttpGet("")]
     public async Task<IActionResult> GetTeams() 

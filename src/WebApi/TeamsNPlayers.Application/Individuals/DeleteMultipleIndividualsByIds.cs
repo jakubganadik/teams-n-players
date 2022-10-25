@@ -13,7 +13,7 @@ internal class DeleteMultipleIndividualsByIdsHandler : IRequestHandler<DeleteMul
 
     public async Task<Unit> Handle(DeleteMultipleIndividualsByIdsCommand request, CancellationToken cancellationToken)
     {
-        var individualsToRemove = request.Ids.Select(id => new Individual { Id = id });
+        var individualsToRemove = request.Ids.Select(id => new Individual { Id = id }); //how does it work
         
         _context.Set<Individual>().RemoveRange(individualsToRemove);
 
