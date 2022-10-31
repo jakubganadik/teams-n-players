@@ -7,23 +7,15 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Button: typeof import('./src/components/Button.vue')['default']
-    Counter: typeof import('./src/components/Counter.vue')['default']
-    DDialog: typeof import('./src/components/design/DDialog.vue')['default']
-    DesignCheckbox: typeof import('./src/components/design/DesignCheckbox.vue')['default']
-    DFilledButton: typeof import('./src/components/design/DFilledButton.vue')['default']
     DCheckbox: typeof import('./src/components/design/DCheckbox.vue')['default']
+    DDialog: typeof import('./src/components/design/DDialog.vue')['default']
+    DFilledButton: typeof import('./src/components/design/DFilledButton.vue')['default']
     DIconButton: typeof import('./src/components/design/DIconButton.vue')['default']
     DModelDialog: typeof import('./src/components/design/DModelDialog.vue')['default']
     DSelect: typeof import('./src/components/design/DSelect.vue')['default']
     DTextInput: typeof import('./src/components/design/DTextInput.vue')['default']
-    Footer: typeof import('./src/components/Footer.vue')['default']
-    Checkbox: typeof import('./src/components/Checkbox.vue')['default']
     ModalDialog: typeof import('./src/components/controls/ModalDialog.vue')['default']
-    ModelDialog: typeof import('./src/components/controls/ModelDialog.vue')['default']
-    Page: typeof import('./src/components/Page.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Teams: typeof import('./src/components/Teams.vue')['default']
   }
 }

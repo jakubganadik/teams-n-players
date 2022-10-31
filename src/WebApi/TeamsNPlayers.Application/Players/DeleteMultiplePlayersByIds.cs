@@ -17,9 +17,9 @@ namespace TeamsNPlayers.Application.Players
         public DeleteMultiplePlayersByIds(DbContext context) => _context = context;
         public async Task<Unit> Handle(DeleteMultiplePlayersByIdCommand request, CancellationToken cancellationToken)
         {
-            var individualsToRemove = request.Ids.Select(id => new Team { Id = id });
+            var individualsToRemove = request.Ids.Select(id => new Player { Id = id });//delete according to pk, the Team does not have to be complete
 
-            _context.Set<Team>().RemoveRange(individualsToRemove);
+            _context.Set<Player>().RemoveRange(individualsToRemove);
 
             await _context.SaveChangesAsync(cancellationToken);
             return Unit.Value;

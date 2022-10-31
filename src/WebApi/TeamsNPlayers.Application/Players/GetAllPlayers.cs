@@ -6,7 +6,7 @@ using TeamsNPlayers.Application.Teams;
 namespace TeamsNPlayers.Application.Players
 {
 
-    public record PlayerItem(Guid Id, Guid TeamId, Guid IndividualId, string TeamName, string IndividualName, ushort ShirtNumber, string Position);
+    public record PlayerItem(Guid Id, Guid TeamId, Guid IndividualId, string TeamName, string PlayerName, ushort ShirtNumber, string Position);
     public record GetAllPlayersQuery : IRequest<List<PlayerItem>>;
     internal class GetAllPlayers : IRequestHandler<GetAllPlayersQuery, List<PlayerItem>>
     {

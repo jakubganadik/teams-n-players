@@ -11,7 +11,7 @@ using TeamsNPlayers.Application.Teams;
 
 namespace TeamsNPlayers.Application.Players
 {
-    public record UpdatePlayerCommand(Guid Id, string? TeamName, ushort? ShirtNumber, string? Position) : IRequest<bool>;
+    public record UpdatePlayerCommand(Guid Id, Guid TeamId, Guid IndividualId, ushort ShirtNumber, string Position) : IRequest<bool>;
     internal class UpdatePlayer : IRequestHandler<UpdatePlayerCommand,bool>
     {
         DbContext _context;
@@ -27,15 +27,20 @@ namespace TeamsNPlayers.Application.Players
             {
                 return false;
             }
+            player.TeamId = request.TeamId;
+            player.IndividualId = request.IndividualId;
+            player.ShirtNumber = request.ShirtNumber;
+            player.Position = request.Position;
+            /*
+            var team = await _context.Query<Team>().Where(t => t.Name == request.TeamName).FirstOrDefaultAsync(cancellationToken);//maybe not neccesary
             
-            var teamid = await _context.Query<Team>().Where(t => t.Name == request.TeamName).Select(t => t.Id).FirstOrDefaultAsync(cancellationToken);//maybe not neccesary
-            if (teamid == null)//why
+            if (team is not null)
             {
-                player.TeamId = teamid;
+                player.TeamId = team.Id;
             }
-            
-            
-                
+            */
+
+
             await _context.SaveChangesAsync(cancellationToken);
 
             return true;

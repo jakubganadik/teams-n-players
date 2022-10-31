@@ -12,6 +12,7 @@ declare global {
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const addIndividual: typeof import('./src/api/individuals')['addIndividual']
   const addPlayer: typeof import('./src/api/players')['addPlayer']
+  const addTeam: typeof import('./src/api/teams')['addTeam']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const availableRoles: typeof import('./src/api/roles')['availableRoles']
@@ -43,6 +44,7 @@ declare global {
   const fetchIndividuals: typeof import('./src/api/individuals')['fetchIndividuals']
   const fetchPlayer: typeof import('./src/api/players')['fetchPlayer']
   const fetchPlayers: typeof import('./src/api/players')['fetchPlayers']
+  const fetchTeam: typeof import('./src/api/teams')['fetchTeam']
   const fetchTeams: typeof import('./src/api/teams')['fetchTeams']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
@@ -100,7 +102,8 @@ declare global {
   const removeIndividual: typeof import('./src/api/individuals')['removeIndividual']
   const removeIndividuals: typeof import('./src/api/individuals')['removeIndividuals']
   const removePlayer: typeof import('./src/api/players')['removePlayer']
-  const removePlayers: typeof import('./src/api/players')['removePlayers']
+  const removePlayers: typeof import('./src/api/teams')['removePlayers']
+  const removeTeam: typeof import('./src/api/teams')['removeTeam']
   const resolveComponent: typeof import('vue')['resolveComponent']
   const resolveRef: typeof import('@vueuse/core')['resolveRef']
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
@@ -131,6 +134,7 @@ declare global {
   const until: typeof import('@vueuse/core')['until']
   const updateIndividual: typeof import('./src/api/individuals')['updateIndividual']
   const updatePlayer: typeof import('./src/api/players')['updatePlayer']
+  const updateTeam: typeof import('./src/api/teams')['updateTeam']
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
   const useAddIndividualMutation: typeof import('./src/composables/individuals')['useAddIndividualMutation']
   const useAddPlayerMutation: typeof import('./src/composables/players')['useAddPlayerMutation']
@@ -328,6 +332,7 @@ declare module '@vue/runtime-core' {
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly addIndividual: UnwrapRef<typeof import('./src/api/individuals')['addIndividual']>
     readonly addPlayer: UnwrapRef<typeof import('./src/api/players')['addPlayer']>
+    readonly addTeam: UnwrapRef<typeof import('./src/api/teams')['addTeam']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly availableRoles: UnwrapRef<typeof import('./src/api/roles')['availableRoles']>
@@ -359,6 +364,7 @@ declare module '@vue/runtime-core' {
     readonly fetchIndividuals: UnwrapRef<typeof import('./src/api/individuals')['fetchIndividuals']>
     readonly fetchPlayer: UnwrapRef<typeof import('./src/api/players')['fetchPlayer']>
     readonly fetchPlayers: UnwrapRef<typeof import('./src/api/players')['fetchPlayers']>
+    readonly fetchTeam: UnwrapRef<typeof import('./src/api/teams')['fetchTeam']>
     readonly fetchTeams: UnwrapRef<typeof import('./src/api/teams')['fetchTeams']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
@@ -416,7 +422,8 @@ declare module '@vue/runtime-core' {
     readonly removeIndividual: UnwrapRef<typeof import('./src/api/individuals')['removeIndividual']>
     readonly removeIndividuals: UnwrapRef<typeof import('./src/api/individuals')['removeIndividuals']>
     readonly removePlayer: UnwrapRef<typeof import('./src/api/players')['removePlayer']>
-    readonly removePlayers: UnwrapRef<typeof import('./src/api/players')['removePlayers']>
+    readonly removePlayers: UnwrapRef<typeof import('./src/api/teams')['removePlayers']>
+    readonly removeTeam: UnwrapRef<typeof import('./src/api/teams')['removeTeam']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
@@ -447,6 +454,7 @@ declare module '@vue/runtime-core' {
     readonly until: UnwrapRef<typeof import('@vueuse/core')['until']>
     readonly updateIndividual: UnwrapRef<typeof import('./src/api/individuals')['updateIndividual']>
     readonly updatePlayer: UnwrapRef<typeof import('./src/api/players')['updatePlayer']>
+    readonly updateTeam: UnwrapRef<typeof import('./src/api/teams')['updateTeam']>
     readonly useActiveElement: UnwrapRef<typeof import('@vueuse/core')['useActiveElement']>
     readonly useAddIndividualMutation: UnwrapRef<typeof import('./src/composables/individuals')['useAddIndividualMutation']>
     readonly useAddPlayerMutation: UnwrapRef<typeof import('./src/composables/players')['useAddPlayerMutation']>

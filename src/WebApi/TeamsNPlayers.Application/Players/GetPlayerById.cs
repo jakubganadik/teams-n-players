@@ -4,7 +4,7 @@ using TeamsNPlayers.Application.Extensions;
 
 namespace TeamsNPlayers.Application.Players
 {
-    public record PlayerItemResult(Guid Id, Guid TeamId, Guid IndividualId, string TeamName, string IndividualName, ushort ShirtNumber, string Position);
+    public record PlayerItemResult(Guid Id, Guid TeamId, Guid IndividualId, string TeamName, string PlayerName, ushort ShirtNumber, string Position);
     public record GetPlayerByIdQuery(Guid Id): IRequest<PlayerItemResult>;
     internal class GetPlayerById : IRequestHandler<GetPlayerByIdQuery, PlayerItemResult?>
     {

@@ -11,7 +11,7 @@ using TeamsNPlayers.Application.Teams;
 
 namespace TeamsNPlayers.Application.Players
 {
-    public record CreatePlayerCommand(Guid Id, Guid TeamId, ushort ShirtNumber, Guid IndividualId, string Position) : IRequest;
+    public record CreatePlayerCommand(Guid Id, Guid TeamId, ushort ShirtNumber, Guid IndividualId, string Position) : IRequest; //(Guid Id, Guid TeamId, ushort ShirtNumber, Guid IndividualId, string Position) : IRequest
     internal class CreatePlayer : IRequestHandler<CreatePlayerCommand>
     {
         private readonly DbContext _context;
