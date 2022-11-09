@@ -3,9 +3,9 @@
 
   const { data: individualsData } = useFetchAllIndividuals()
 
-  const individuals = refDefault(individualsData, [])
+  const individuals = refDefault(individualsData, []) //[] if no fetch data
 
-  const { selectedKeys, selectedCount, isSelected, isAllSelected, toggle, toggleAll } = useSelectable(individuals, individual => individual.id)
+  const { selectedKeys, selectedCount, isSelected, isAllSelected, toggle, toggleAll } = useSelectable(individuals, individual => individual.id)//function as an argument
 
   const { mutate: add } = useAddIndividualMutation()
   const { mutate: update } = useUpdateIndividualMutation()

@@ -102,8 +102,9 @@ declare global {
   const removeIndividual: typeof import('./src/api/individuals')['removeIndividual']
   const removeIndividuals: typeof import('./src/api/individuals')['removeIndividuals']
   const removePlayer: typeof import('./src/api/players')['removePlayer']
-  const removePlayers: typeof import('./src/api/teams')['removePlayers']
+  const removePlayers: typeof import('./src/api/players')['removePlayers']
   const removeTeam: typeof import('./src/api/teams')['removeTeam']
+  const removeTeams: typeof import('./src/api/teams')['removeTeams']
   const resolveComponent: typeof import('vue')['resolveComponent']
   const resolveRef: typeof import('@vueuse/core')['resolveRef']
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
@@ -138,6 +139,7 @@ declare global {
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
   const useAddIndividualMutation: typeof import('./src/composables/individuals')['useAddIndividualMutation']
   const useAddPlayerMutation: typeof import('./src/composables/players')['useAddPlayerMutation']
+  const useAddTeamMutation: typeof import('./src/composables/useTeams')['useAddTeamMutation']
   const useArrayEvery: typeof import('@vueuse/core')['useArrayEvery']
   const useArrayFilter: typeof import('@vueuse/core')['useArrayFilter']
   const useArrayFind: typeof import('@vueuse/core')['useArrayFind']
@@ -245,8 +247,10 @@ declare global {
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useRemoveMultipleIndividualsByIdMutation: typeof import('./src/composables/individuals')['useRemoveMultipleIndividualsByIdMutation']
   const useRemoveMultiplePlayersByIdMutation: typeof import('./src/composables/players')['useRemoveMultiplePlayersByIdMutation']
+  const useRemoveMultipleTeamsByIdMutation: typeof import('./src/composables/useTeams')['useRemoveMultipleTeamsByIdMutation']
   const useRemoveSingleIndividualByIdMutation: typeof import('./src/composables/individuals')['useRemoveSingleIndividualByIdMutation']
   const useRemoveSinglePlayerByIdMutation: typeof import('./src/composables/players')['useRemoveSinglePlayerByIdMutation']
+  const useRemoveSingleTeamByIdMutation: typeof import('./src/composables/useTeams')['useRemoveSingleTeamByIdMutation']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
@@ -287,6 +291,7 @@ declare global {
   const useTransition: typeof import('@vueuse/core')['useTransition']
   const useUpdateIndividualMutation: typeof import('./src/composables/individuals')['useUpdateIndividualMutation']
   const useUpdatePlayerMutation: typeof import('./src/composables/players')['useUpdatePlayerMutation']
+  const useUpdateTeamMutation: typeof import('./src/composables/useTeams')['useUpdateTeamMutation']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
   const useUserMedia: typeof import('@vueuse/core')['useUserMedia']
   const useVModel: typeof import('@vueuse/core')['useVModel']
@@ -422,8 +427,9 @@ declare module '@vue/runtime-core' {
     readonly removeIndividual: UnwrapRef<typeof import('./src/api/individuals')['removeIndividual']>
     readonly removeIndividuals: UnwrapRef<typeof import('./src/api/individuals')['removeIndividuals']>
     readonly removePlayer: UnwrapRef<typeof import('./src/api/players')['removePlayer']>
-    readonly removePlayers: UnwrapRef<typeof import('./src/api/teams')['removePlayers']>
+    readonly removePlayers: UnwrapRef<typeof import('./src/api/players')['removePlayers']>
     readonly removeTeam: UnwrapRef<typeof import('./src/api/teams')['removeTeam']>
+    readonly removeTeams: UnwrapRef<typeof import('./src/api/teams')['removeTeams']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
@@ -458,6 +464,7 @@ declare module '@vue/runtime-core' {
     readonly useActiveElement: UnwrapRef<typeof import('@vueuse/core')['useActiveElement']>
     readonly useAddIndividualMutation: UnwrapRef<typeof import('./src/composables/individuals')['useAddIndividualMutation']>
     readonly useAddPlayerMutation: UnwrapRef<typeof import('./src/composables/players')['useAddPlayerMutation']>
+    readonly useAddTeamMutation: UnwrapRef<typeof import('./src/composables/useTeams')['useAddTeamMutation']>
     readonly useArrayEvery: UnwrapRef<typeof import('@vueuse/core')['useArrayEvery']>
     readonly useArrayFilter: UnwrapRef<typeof import('@vueuse/core')['useArrayFilter']>
     readonly useArrayFind: UnwrapRef<typeof import('@vueuse/core')['useArrayFind']>
@@ -565,8 +572,10 @@ declare module '@vue/runtime-core' {
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useRemoveMultipleIndividualsByIdMutation: UnwrapRef<typeof import('./src/composables/individuals')['useRemoveMultipleIndividualsByIdMutation']>
     readonly useRemoveMultiplePlayersByIdMutation: UnwrapRef<typeof import('./src/composables/players')['useRemoveMultiplePlayersByIdMutation']>
+    readonly useRemoveMultipleTeamsByIdMutation: UnwrapRef<typeof import('./src/composables/useTeams')['useRemoveMultipleTeamsByIdMutation']>
     readonly useRemoveSingleIndividualByIdMutation: UnwrapRef<typeof import('./src/composables/individuals')['useRemoveSingleIndividualByIdMutation']>
     readonly useRemoveSinglePlayerByIdMutation: UnwrapRef<typeof import('./src/composables/players')['useRemoveSinglePlayerByIdMutation']>
+    readonly useRemoveSingleTeamByIdMutation: UnwrapRef<typeof import('./src/composables/useTeams')['useRemoveSingleTeamByIdMutation']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
@@ -607,6 +616,7 @@ declare module '@vue/runtime-core' {
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUpdateIndividualMutation: UnwrapRef<typeof import('./src/composables/individuals')['useUpdateIndividualMutation']>
     readonly useUpdatePlayerMutation: UnwrapRef<typeof import('./src/composables/players')['useUpdatePlayerMutation']>
+    readonly useUpdateTeamMutation: UnwrapRef<typeof import('./src/composables/useTeams')['useUpdateTeamMutation']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>

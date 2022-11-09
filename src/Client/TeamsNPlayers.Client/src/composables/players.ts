@@ -1,9 +1,9 @@
-﻿import type { Player, PlayerId } from '~/api/players'
+import type { Player, PlayerId } from '~/api/players'
 
 export const useFetchAllPlayers = () => {
-  return useQuery(['players'], fetchPlayers, { retry: 0 })
+  return useQuery(['players'], fetchPlayers, { retry: 0 }) //players?
 }
-
+//mutation state changing method update/delete/post
 export const useAddPlayerMutation = () => {
   const queryClient = useQueryClient()
 
@@ -22,7 +22,7 @@ export const useAddPlayerMutation = () => {
       const players = queryClient.getQueryData<Player[]>(['players'])
       queryClient.setQueryData(['players'], players?.map(i => i === context ? { ...i, ...data } : i))
     },
-    // onError: () => queryClient.invalidateQueries(['players'])
+    onError: () => queryClient.invalidateQueries(['players'])
   })
 }
 

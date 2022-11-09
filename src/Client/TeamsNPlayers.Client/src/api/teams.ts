@@ -34,5 +34,5 @@ export const updateTeam = async (team: Team) => {
 export const removeTeam = async (id: TeamId) =>
   await teamsApi.delete(id)
 
-export const removePlayers = async (ids: TeamId[]) =>
+export const removeTeams = async (ids: TeamId[]) =>
   await teamsApi.post('delete', ids)

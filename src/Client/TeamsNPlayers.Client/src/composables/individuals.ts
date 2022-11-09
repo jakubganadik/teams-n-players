@@ -1,4 +1,4 @@
-﻿import type { Individual, IndividualId } from '~/api/individuals'
+import type { Individual, IndividualId } from '~/api/individuals'
 
 export const useFetchAllIndividuals = () => {
   return useQuery(['individuals'], fetchIndividuals, { retry: 0 })
@@ -50,7 +50,7 @@ export const useUpdateIndividualMutation = () => {
 
 export const useRemoveSingleIndividualByIdMutation = () => {
   const queryClient = useQueryClient()
-
+//how it works
   return useMutation((id: IndividualId) => removeIndividual(id), {
     onMutate: (id) => {
       const individuals = queryClient.getQueryData<Individual[]>(['individuals'])

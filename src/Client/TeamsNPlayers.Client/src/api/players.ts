@@ -1,4 +1,4 @@
-﻿import type { output } from 'zod'
+import type { output } from 'zod'
 
 const api = mande('')
 const playersApi = mande('api/v1/players')
@@ -20,7 +20,7 @@ export type Player = output<typeof playerSchema>
 
 export const fetchPlayers = async () =>
   playerSchema.array().parse(await playersApi.get(''))
-
+//calling backend
 export const fetchPlayer = async (id: PlayerId) =>
   playerSchema.parse(await playersApi.get(id))
 
