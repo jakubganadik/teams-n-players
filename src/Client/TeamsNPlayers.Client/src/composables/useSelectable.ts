@@ -1,9 +1,11 @@
-﻿import type { Ref } from 'vue'
+﻿import { Console } from 'console'
+import type { Ref } from 'vue'
 //key item
 export const useSelectable = <TItem, TKey>(collection: Ref<TItem[]>, key: (item: TItem) => TKey) => {
   const selection = reactive(new Set<TKey>())
   //key is a callback function
   //value is the old collection-unchanged
+
   watch(collection, (value) => {
     const ids = new Set(value.map(key))
 

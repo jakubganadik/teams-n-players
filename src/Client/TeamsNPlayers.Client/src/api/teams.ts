@@ -28,7 +28,7 @@ export const addTeam = async (team: Omit<Team, 'id'>) => {
 
 export const updateTeam = async (team: Team) => {
   await teamsApi.put(team.id, team)
-  return await fetchPlayer(team.id)
+  return await fetchTeam(team.id)
 }
 
 export const removeTeam = async (id: TeamId) =>
